@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      <h1 className="bg-midnight-900">Web</h1>
+      <h1>Web</h1>
     </div>
   );
 }

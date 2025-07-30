@@ -2,4 +2,15 @@
 @import "@devjobs/ui/theme.css";
 
 @theme {
+  --color-dashboard-background: var(--theme-dashboard-background);
+}
+
+@layer base {
+  :root {
+    --theme-dashboard-background: var(--color-gray-300);
+  }
+
+  [data-theme="dark"] {
+    --theme-dashboard-background: var(--color-midnight-900);
+  }
 }
