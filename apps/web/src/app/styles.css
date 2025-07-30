@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@import "@devjobs/design-system/styles.css";
+@import "@devjobs/ui/styles.css";
+@import "./theme.css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
