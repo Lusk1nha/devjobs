@@ -3,10 +3,19 @@
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
-export function ThemeProvider(
-  props: React.ComponentProps<typeof NextThemesProvider>
-) {
-  const { children, ...rest } = props;
+export function ThemeProvider({
+  children,
+  ...props
+}: Readonly<React.ComponentProps<typeof NextThemesProvider>>) {
+  const [mounted, setMounted] = React.useState(false);
 
-  return <NextThemesProvider {...rest}>{children}</NextThemesProvider>;
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }

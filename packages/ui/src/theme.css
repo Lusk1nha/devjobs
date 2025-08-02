@@ -1,4 +1,22 @@
 @import "@devjobs/design-system/theme.css";
 
-@theme {
+@theme inline {
+  /* ==== Switch Input ==== */
+  --spacing-switch-w: 3rem;
+  --spacing-switch-h: 1.5rem;
+
+  --color-switch-active: var(--theme-switch-active);
+  --color-switch-inactive: var(--theme-switch-inactive);
+  --color-switch-dot: var(--theme-switch-dot);
+}
+
+@layer base {
+  :root {
+    --theme-switch-active: var(--color-white);
+    --theme-switch-inactive: var(--color-white);
+    --theme-switch-dot: var(--color-violet-900);
+  }
+
+  [data-theme="dark"] {
+  }
 }

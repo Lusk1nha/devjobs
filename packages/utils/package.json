@@ -1,0 +1,29 @@
+{
+  "name": "@devjobs/utils",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./cn": "./src/cn.ts"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@devjobs/eslint-config": "workspace:*",
+    "@devjobs/jest-presets": "workspace:*",
+    "@devjobs/typescript-config": "workspace:*",
+    "@jest/globals": "^29.7.0",
+    "@types/node": "^20.11.24",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "typescript": "5.5.4"
+  },
+  "jest": {
+    "preset": "@devjobs/jest-presets/node"
+  }
+}
