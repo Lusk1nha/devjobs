@@ -13,7 +13,8 @@
     "./styles.css": "./dist/styles.css",
     "./theme.css": "./src/theme.css",
     "./button": "./src/button.tsx",
-    "./switch-input": "./src/switch-input.tsx"
+    "./switch-input": "./src/switch-input.tsx",
+    "./text-input": "./src/text-input.tsx"
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\" --max-warnings 0",

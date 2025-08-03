@@ -13,7 +13,10 @@
     "./moon-icon": "./src/moon-icon.tsx",
     "./triangle-icon": "./src/triangle-icon.tsx",
     "./semi-triangle-icon": "./src/semi-triangle-icon.tsx",
-    "./vertical-triangle-icon": "./src/vertical-triangle-icon.tsx"
+    "./vertical-triangle-icon": "./src/vertical-triangle-icon.tsx",
+    "./search-icon": "./src/search-icon.tsx",
+    "./pin-icon": "./src/pin-icon.tsx",
+    "./filter-icon": "./src/filter-icon.tsx"
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\" --max-warnings 0"

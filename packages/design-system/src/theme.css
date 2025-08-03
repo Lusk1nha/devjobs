@@ -15,6 +15,7 @@
   /* ==== Border Radius ==== */
   --radius-0: 0rem;
   --radius-4: 0.25rem;
+  --radius-5: 0.3125rem;
   --radius-6: 0.375rem;
   --radius-8: 0.5rem;
   --radius-10: 0.625rem;
@@ -24,23 +25,27 @@
   --radius-24: 1.5rem;
 
   /* ==== Typography ==== */
-  --text-1-size: 1.75rem;
-  --text-1-spacing: 2.125rem;
-  --text-1-weight: 700;
+  --text-heading-1: 1.75rem;
+  --text-heading-1--line-height: 2.125rem;
+  --text-heading-1--font-weight: 700;
 
-  --text-2-size: 1.5rem;
-  --text-2-spacing: 1.813rem;
-  --text-2-weight: 700;
+  --text-heading-2: 1.5rem;
+  --text-heading-2--line-height: 1.875rem;
+  --text-heading-2--font-weight: 700;
 
-  --text-3-size: 1.25rem;
-  --text-3-spacing: 1.5rem;
-  --text-3-weight: 700;
+  --text-heading-3: 1.25rem;
+  --text-heading-3--line-height: 1.625rem;
+  --text-heading-3--font-weight: 700;
 
-  --text-4-size: 0.875rem;
-  --text-4-spacing: 1.063rem;
-  --text-4-weight: 700;
+  --text-heading-4: 1rem;
+  --text-heading-4--line-height: 1.5rem;
+  --text-heading-4--font-weight: 700;
 
-  --paragraph-1-size: 1rem;
-  --paragraph-1-spacing: 1.625rem;
-  --paragraph-1-weight: 400;
+  --text-heading-5: 0.875rem;
+  --text-heading-5--line-height: 1.063rem;
+  --text-heading-5--font-weight: 700;
+
+  --text-paragraph-1: 1rem;
+  --text-paragraph-1--line-height: 1.5rem;
+  --text-paragraph-1--font-weight: 400;
 }

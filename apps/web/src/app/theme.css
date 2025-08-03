@@ -7,11 +7,17 @@
 
   --color-dashboard-banner-background: var(--theme-dashboard-banner-background);
 
+  --color-search-filters-background: var(--theme-search-filters-background);
+  --color-search-filters-separator: var(--theme-search-filters-separator);
+
   --color-logo-primary: var(--theme-logo-primary);
   --color-switch-theme-icon: var(--theme-switch-theme-icon);
 
   --spacing-h-navbar: 136px;
   --spacing-h-navbar-md: 160px;
+
+  --spacing-w-content-md: 689px;
+  --spacing-w-content-lg: 1110px;
 }
 
 @layer base {
@@ -21,11 +27,15 @@
 
     --theme-dashboard-banner-background: var(--color-white);
 
+    --theme-search-filters-background: var(--color-white);
+    --theme-search-filters-separator: var(--color-gray-900);
+
     --theme-logo-primary: var(--color-white);
     --theme-switch-theme-icon: var(--color-white);
   }
 
   [data-theme="dark"] {
     --theme-dashboard-background: var(--color-midnight-900);
+    --theme-search-filters-background: var(--color-dark-blue-900);
   }
 }

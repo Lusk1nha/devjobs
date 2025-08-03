@@ -4,19 +4,67 @@
   /* ==== Switch Input ==== */
   --spacing-switch-w: 3rem;
   --spacing-switch-h: 1.5rem;
-
   --color-switch-active: var(--theme-switch-active);
   --color-switch-inactive: var(--theme-switch-inactive);
   --color-switch-dot: var(--theme-switch-dot);
+  --color-switch-dot-hover: var(--theme-switch-dot-hover);
+
+  /* ==== Text Input ==== */
+  --spacing-text-input-w: 100%;
+  --spacing-text-input-h: 5rem;
+  --color-text-input-bg: var(--theme-text-input-bg);
+  --color-text-input-text: var(--theme-text-input-text);
+  --color-text-input-placeholder: var(--theme-text-input-placeholder);
+  --color-text-input-icon: var(--theme-text-input-icon);
+
+  /* ==== Button ==== */
+  --spacing-button-default-p: 0.875rem;
+
+  --color-button-default-bg: var(--theme-button-default-bg);
+  --color-button-default-text: var(--theme-button-default-text);
+  --color-button-default-hover-bg: var(--theme-button-default-hover-bg);
+  --color-button-default-hover-text: var(--theme-button-default-hover-text);
+  --color-button-ghost-bg: var(--theme-button-ghost-bg);
+  --color-button-ghost-text: var(--theme-button-ghost-text);
+  --color-button-ghost-hover-bg: var(--theme-button-ghost-hover-bg);
+  --color-button-ghost-hover-text: var(--theme-button-ghost-hover-text);
 }
 
 @layer base {
   :root {
+    /* ==== Switch Input Theme ==== */
     --theme-switch-active: var(--color-white);
     --theme-switch-inactive: var(--color-white);
     --theme-switch-dot: var(--color-violet-900);
+    --theme-switch-dot-hover: var(--color-violet-500);
+
+    /* ==== Text Input Theme ==== */
+    --theme-text-input-bg: var(--color-white);
+    --theme-text-input-text: var(--color-dark-blue-900);
+    --theme-text-input-placeholder: var(--color-dark-blue-900);
+    --theme-text-input-icon: var(--color-violet-900);
+
+    /* ==== Button ==== */
+    --theme-button-default-bg: var(--color-violet-900);
+    --theme-button-default-text: var(--color-white);
+    --theme-button-default-hover-bg: var(--color-violet-500);
+    --theme-button-default-hover-text: var(--color-white);
+    --theme-button-ghost-bg: var(--color-transparent);
+    --theme-button-ghost-text: var(--color-gray-900);
+    --theme-button-ghost-hover-bg: var(--color-violet-900);
+    --theme-button-ghost-hover-text: var(--color-gray-900);
   }
 
   [data-theme="dark"] {
+    /* ==== Text Input Theme ==== */
+    --theme-text-input-bg: var(--color-dark-blue-900);
+    --theme-text-input-text: var(--color-gray-300);
+    --theme-text-input-placeholder: var(--color-gray-500);
+
+    /* ==== Button ==== */
+    --theme-button-ghost-bg: var(--color-transparent);
+    --theme-button-ghost-text: var(--color-white);
+    --theme-button-ghost-hover-bg: var(--color-gray-900);
+    --theme-button-ghost-hover-text: var(--color-white);
   }
 }

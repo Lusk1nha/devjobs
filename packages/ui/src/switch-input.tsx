@@ -37,6 +37,7 @@ const SwitchInput = forwardRef<HTMLInputElement, SwitchInputProps>(
     return (
       <label
         className={cn(
+          "group",
           switchInputVariants({ variant, size, checked, className })
         )}
         data-component="switch"
@@ -53,7 +54,7 @@ const SwitchInput = forwardRef<HTMLInputElement, SwitchInputProps>(
 
         <div
           className={cn(
-            "bg-switch-dot min-w-3.5 min-h-3.5 absolute top-1/2 transform -translate-y-1/2 rounded-full transition-transform duration-200 ease-in-out",
+            "bg-switch-dot group-hover:bg-switch-dot-hover min-w-3.5 min-h-3.5 absolute top-1/2 transform -translate-y-1/2 rounded-full transition-transform duration-200 ease-in-out",
             checked ? "right-[5px] translate-x-0" : "left-[5px] translate-x-0"
           )}
         />

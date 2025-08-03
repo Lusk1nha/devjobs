@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  output: "standalone",
   reactStrictMode: true,
   transpilePackages: [
     "@devjobs/design-system",
@@ -8,7 +9,6 @@ module.exports = {
     "@devjobs/icons",
     "@devjobs/utils",
   ],
-  output: "standalone",
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
   },

@@ -28,7 +28,7 @@ export function ChangeThemeAction() {
   if (!mounted) return null;
 
   return (
-    <div className="flex items-center text-switch-theme-icon gap-x-4">
+    <span className="flex items-center text-switch-theme-icon gap-x-4">
       <SunIcon className="w-5 h-5" />
       <SwitchInput
         name="theme-switch"
@@ -40,6 +40,6 @@ export function ChangeThemeAction() {
         onChange={handleThemeChange}
       />
       <MoonIcon className="w-4 h-4" />
-    </div>
+    </span>
   );
 }
