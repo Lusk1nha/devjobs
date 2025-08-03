@@ -1,5 +1,7 @@
 "use client";
 
+import { MoonIcon } from "@devjobs/icons/moon-icon";
+import { SunIcon } from "@devjobs/icons/sun-icon";
 import { SwitchInput } from "@devjobs/ui/switch-input";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -26,12 +28,18 @@ export function ChangeThemeAction() {
   if (!mounted) return null;
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center text-switch-theme-icon gap-x-4">
+      <SunIcon className="w-5 h-5" />
       <SwitchInput
         name="theme-switch"
+        title="Toggle theme"
+        aria-description="Toggle between light and dark mode"
+        aria-label="Toggle theme"
+        alt="Toggle theme"
         checked={isDarkMode}
         onChange={handleThemeChange}
       />
+      <MoonIcon className="w-4 h-4" />
     </div>
   );
 }

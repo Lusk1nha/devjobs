@@ -5,7 +5,10 @@
   --color-dashboard-background: var(--theme-dashboard-background);
   --color-dashboard-navbar-background: var(--theme-dashboard-navbar-background);
 
+  --color-dashboard-banner-background: var(--theme-dashboard-banner-background);
+
   --color-logo-primary: var(--theme-logo-primary);
+  --color-switch-theme-icon: var(--theme-switch-theme-icon);
 
   --spacing-h-navbar: 136px;
   --spacing-h-navbar-md: 160px;
@@ -16,7 +19,10 @@
     --theme-dashboard-background: var(--color-gray-300);
     --theme-dashboard-navbar-background: var(--color-violet-900);
 
+    --theme-dashboard-banner-background: var(--color-white);
+
     --theme-logo-primary: var(--color-white);
+    --theme-switch-theme-icon: var(--color-white);
   }
 
   [data-theme="dark"] {

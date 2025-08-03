@@ -11,6 +11,8 @@
   "dependencies": {
     "@devjobs/design-system": "workspace:*",
     "@devjobs/ui": "workspace:*",
+    "@devjobs/icons": "workspace:*",
+    "@devjobs/utils": "workspace:*",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/postcss": "^4.1.11",
     "next": "^14.1.1",

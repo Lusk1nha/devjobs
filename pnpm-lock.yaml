@@ -90,9 +90,15 @@ importers:
       '@devjobs/design-system':
         specifier: workspace:*
         version: link:../../packages/design-system
+      '@devjobs/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
       '@devjobs/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@devjobs/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@tailwindcss/cli':
         specifier: ^4.1.11
         version: 4.1.11
@@ -200,6 +206,37 @@ importers:
       eslint-plugin-only-warn:
         specifier: ^1.1.0
         version: 1.1.0
+      typescript:
+        specifier: 5.5.4
+        version: 5.5.4
+
+  packages/icons:
+    dependencies:
+      '@devjobs/design-system':
+        specifier: workspace:*
+        version: link:../design-system
+      '@devjobs/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+    devDependencies:
+      '@devjobs/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@devjobs/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/react':
+        specifier: ^18.2.61
+        version: 18.3.23
+      '@types/react-dom':
+        specifier: ^18.2.19
+        version: 18.3.7(@types/react@18.3.23)
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.1
       typescript:
         specifier: 5.5.4
         version: 5.5.4

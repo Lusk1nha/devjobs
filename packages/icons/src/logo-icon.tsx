@@ -1,8 +1,9 @@
 import { forwardRef } from "react";
+import { SVGComponentProps } from "./__types__/svg-type";
 
-interface LogoProps extends React.SVGProps<SVGSVGElement> {}
+interface LogoIconProps extends SVGComponentProps {}
 
-const Logo = forwardRef<SVGSVGElement, LogoProps>((props, ref) => {
+const LogoIcon = forwardRef<SVGSVGElement, LogoIconProps>((props, ref) => {
   return (
     <svg
       width="115"
@@ -23,6 +24,6 @@ const Logo = forwardRef<SVGSVGElement, LogoProps>((props, ref) => {
   );
 });
 
-Logo.displayName = "Logo";
+LogoIcon.displayName = "LogoIcon";
 
-export { Logo };
+export { LogoIcon };
