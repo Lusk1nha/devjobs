@@ -1,0 +1,38 @@
+{
+  "name": "@devjobs/icons",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist/**",
+    "dist"
+  ],
+  "exports": {
+    "./types": "./src/__types__/svg-type.ts",
+    "./logo-icon": "./src/logo-icon.tsx",
+    "./sun-icon": "./src/sun-icon.tsx",
+    "./moon-icon": "./src/moon-icon.tsx",
+    "./triangle-icon": "./src/triangle-icon.tsx",
+    "./semi-triangle-icon": "./src/semi-triangle-icon.tsx",
+    "./vertical-triangle-icon": "./src/vertical-triangle-icon.tsx",
+    "./search-icon": "./src/search-icon.tsx",
+    "./pin-icon": "./src/pin-icon.tsx",
+    "./filter-icon": "./src/filter-icon.tsx"
+  },
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\" --max-warnings 0"
+  },
+  "devDependencies": {
+    "@devjobs/eslint-config": "workspace:*",
+    "@devjobs/typescript-config": "workspace:*",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "eslint": "^8.57.0",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@devjobs/design-system": "workspace:*",
+    "@devjobs/utils": "workspace:*",
+    "react": "^18.2.0"
+  },
+  "packageManager": "pnpm@10.6.5"
+}

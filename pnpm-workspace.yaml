@@ -3,5 +3,5 @@ packages:
   - packages/*
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
+  - esbuild
+  - unrs-resolver
