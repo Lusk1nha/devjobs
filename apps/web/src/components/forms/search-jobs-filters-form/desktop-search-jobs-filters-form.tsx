@@ -10,6 +10,8 @@ import { Control } from "react-hook-form";
 import { SearchJobsSchema } from "../../../validators/search-jobs-validator/search-jobs-validator";
 import { Button } from "@devjobs/ui/button";
 
+import { ControlledCheckboxInput } from "../../inputs/controlled-checkbox-input/controlled-checkbox-input";
+
 interface DesktopSearchJobsFiltersFormProps {
   control: Control<SearchJobsSchema>;
 }
@@ -40,11 +42,15 @@ export function DesktopSearchJobsFiltersForm(
           />
         </JobFieldWrapper>
 
-        <JobFieldWrapper>checkbox</JobFieldWrapper>
+        <JobFieldWrapper>
+          <ControlledCheckboxInput name="fullTime" control={control}>
+            Full Time Only
+          </ControlledCheckboxInput>
+        </JobFieldWrapper>
       </div>
 
       <div className="flex items-center gap-x-4">
-        <Button type="submit">Search</Button>
+        <Button type="submit" className="lg:px-8">Search</Button>
       </div>
     </div>
   );
