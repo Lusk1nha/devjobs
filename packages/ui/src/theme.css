@@ -71,6 +71,9 @@
     --theme-checkbox-inactive-hover: var(--color-violet-900);
     --theme-checkbox-check-text: var(--color-white);
     --theme-checkbox-label-text: var(--color-dark-blue-900);
+
+    /* ==== Dialog ==== */
+    --theme-dialog-
   }
 
   [data-theme="dark"] {

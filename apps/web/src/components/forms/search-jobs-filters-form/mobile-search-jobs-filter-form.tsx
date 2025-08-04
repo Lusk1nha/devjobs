@@ -5,8 +5,9 @@ import { SearchIcon } from "@devjobs/icons/search-icon";
 import { ControlledTextInput } from "../../inputs/controlled-text-input/controlled-text-input";
 import { Control } from "react-hook-form";
 import { SearchJobsSchema } from "../../../validators/search-jobs-validator/search-jobs-validator";
-import { OpenFilterDialogAction } from "../../actions/open-filter-dialog-action";
+
 import { Button } from "@devjobs/ui/button";
+import { MobileSearchFiltersDialog } from "../../dialogs/mobile-search-filters-dialog";
 
 interface MobileSearchJobsFiltersFormProps {
   control: Control<SearchJobsSchema>;
@@ -29,7 +30,7 @@ export function MobileSearchJobsFiltersForm(
       </div>
 
       <div className="flex items-center gap-x-4">
-        <OpenFilterDialogAction />
+        <MobileSearchFiltersDialog control={control} />
 
         <Button type="submit">
           <SearchIcon className="w-5 h-5" />
