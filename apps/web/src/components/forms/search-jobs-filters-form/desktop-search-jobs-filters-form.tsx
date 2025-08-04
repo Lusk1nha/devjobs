@@ -20,7 +20,7 @@ export function DesktopSearchJobsFiltersForm(
   const { control } = props;
 
   return (
-    <div className="w-full h-full flex items-center justify-between gap-x-4 px-7.5">
+    <div className="w-full h-full flex items-center justify-between gap-x-4 px-4 lg:px-7.5">
       <div className="w-full flex items-center">
         <JobFieldWrapper>
           <ControlledTextInput
