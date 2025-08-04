@@ -102,7 +102,7 @@ const Field = React.forwardRef<HTMLInputElement, TextInputFieldProps>(
         ref={ref}
         data-slot="input-field"
         className={cn(
-          "w-full flex-1 bg-transparent outline-none text-input-text placeholder:text-input-placeholder/50",
+          "w-full flex-1 bg-transparent outline-none text-input-text placeholder:text-input-placeholder/50 caret-text-input-caret",
           className
         )}
         {...props}

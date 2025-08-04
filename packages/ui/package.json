@@ -14,7 +14,8 @@
     "./theme.css": "./src/theme.css",
     "./button": "./src/button.tsx",
     "./switch-input": "./src/switch-input.tsx",
-    "./text-input": "./src/text-input.tsx"
+    "./text-input": "./src/text-input.tsx",
+    "./checkbox-input": "./src/checkbox-input.tsx"
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\" --max-warnings 0",
@@ -32,6 +33,7 @@
   "dependencies": {
     "@devjobs/design-system": "workspace:*",
     "@devjobs/utils": "workspace:*",
+    "@devjobs/icons": "workspace:*",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/postcss": "^4.1.11",
     "class-variance-authority": "^0.7.1",

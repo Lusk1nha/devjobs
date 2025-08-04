@@ -16,7 +16,8 @@
     "./vertical-triangle-icon": "./src/vertical-triangle-icon.tsx",
     "./search-icon": "./src/search-icon.tsx",
     "./pin-icon": "./src/pin-icon.tsx",
-    "./filter-icon": "./src/filter-icon.tsx"
+    "./filter-icon": "./src/filter-icon.tsx",
+    "./check-icon": "./src/check-icon.tsx"
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\" --max-warnings 0"

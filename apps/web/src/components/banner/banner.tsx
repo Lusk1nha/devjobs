@@ -16,7 +16,7 @@ export function Banner(props: Readonly<BannerProps>) {
         <TriangleIcon className="w-full h-full" />
       </div>
 
-      <div className="w-full lg:w-auto absolute text-dashboard-banner-background right-0 lg:right-[45%] top-0 md:left-0">
+      <div className="w-full lg:w-auto absolute text-dashboard-banner-background -right-1/3 lg:right-[45%] top-0 md:left-0">
         <SemiTriangleIcon className="w-full" />
       </div>
 
