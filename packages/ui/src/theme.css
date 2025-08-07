@@ -38,6 +38,13 @@
   --color-checkbox-inactive-hover: var(--theme-checkbox-inactive-hover);
   --color-checkbox-check-text: var(--theme-checkbox-check-text);
   --color-checkbox-label-text: var(--theme-checkbox-label-text);
+
+  /* ==== Dialog ==== */
+  --color-dialog-content-bg: var(--theme-dialog-content-bg);
+
+  /* ==== Separator ==== */
+  --spacing-separator: 1px;
+  --color-separator: var(--theme-separator);
 }
 
 @layer base {
@@ -73,7 +80,10 @@
     --theme-checkbox-label-text: var(--color-dark-blue-900);
 
     /* ==== Dialog ==== */
-    --theme-dialog-
+    --theme-dialog-content-bg: var(--color-white);
+
+    /* ==== Separator ==== */
+    --theme-separator: var(--color-gray-900);
   }
 
   [data-theme="dark"] {
@@ -91,5 +101,8 @@
     /* ==== Checkbox Input ==== */
     --theme-checkbox-inactive: var(--color-white);
     --theme-checkbox-label-text: var(--color-white);
+
+    /* ==== Dialog ==== */
+    --theme-dialog-content-bg: var(--color-dark-blue-900);
   }
 }

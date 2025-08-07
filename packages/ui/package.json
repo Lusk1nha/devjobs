@@ -16,7 +16,9 @@
     "./switch-input": "./src/switch-input.tsx",
     "./text-input": "./src/text-input.tsx",
     "./checkbox-input": "./src/checkbox-input.tsx",
-    "./dialog": "./src/dialog.tsx"
+    "./dialog": "./src/dialog.tsx",
+    "./alert-dialog": "./src/alert-dialog.tsx",
+    "./separator": "./src/separator.tsx"
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\" --max-warnings 0",
@@ -35,7 +37,9 @@
     "@devjobs/design-system": "workspace:*",
     "@devjobs/icons": "workspace:*",
     "@devjobs/utils": "workspace:*",
+    "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-separator": "^1.1.7",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/postcss": "^4.1.11",
     "class-variance-authority": "^0.7.1",

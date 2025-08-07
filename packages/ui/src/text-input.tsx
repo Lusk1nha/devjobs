@@ -72,7 +72,7 @@ const Icon = React.forwardRef<HTMLSpanElement, InputIconProps>(
       data-slot="input-icon"
       ref={ref}
       className={cn(
-        "hidden md:!flex h-5 w-5 items-center justify-center text-text-input-icon",
+        "flex h-5 w-5 items-center justify-center text-text-input-icon",
         className
       )}
       {...props}

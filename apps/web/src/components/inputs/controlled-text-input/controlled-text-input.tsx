@@ -25,6 +25,7 @@ export function ControlledTextInput<T extends FieldValues>(
     placeholder = "",
     description = "",
     required = false,
+    className,
     ...fieldProps
   } = props;
 
@@ -36,7 +37,7 @@ export function ControlledTextInput<T extends FieldValues>(
       control={control}
       render={({ field }) => (
         <TextInput.Wrapper>
-          <TextInput.Root>
+          <TextInput.Root className={className}>
             {icon && <TextInput.Icon>{icon}</TextInput.Icon>}
             <TextInput.Field
               id={id}
