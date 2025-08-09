@@ -2,127 +2,162 @@ import * as React from "react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
 import { cn } from "@devjobs/utils/cn";
+import { buttonVariants } from "./button";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-function AlertDialog(
-  props: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Root>>
-) {
-  return <AlertDialogPrimitive.Root data-slot="dialog" {...props} />;
+function AlertDialog({
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Root>>) {
+  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
 }
 
-function AlertDialogTrigger(
-  props: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Trigger>>
-) {
-  return <AlertDialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
+function AlertDialogTrigger({
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Trigger>>) {
+  return (
+    <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
+  );
 }
 
-function AlertDialogPortal(
-  props: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Portal>>
-) {
-  return <AlertDialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
+function AlertDialogPortal({
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Portal>>) {
+  return (
+    <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
+  );
 }
 
-function AlertDialogOverlay(
-  props: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Overlay>>
-) {
-  const { className, ...rest } = props;
-
+function AlertDialogOverlay({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Overlay>>) {
   return (
     <AlertDialogPrimitive.Overlay
-      data-slot="dialog-overlay"
+      data-slot="alert-dialog-overlay"
       className={cn(
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/48",
         className
       )}
-      {...rest}
+      {...props}
     />
   );
 }
 
-interface DialogContentProps
-  extends React.ComponentProps<typeof AlertDialogPrimitive.Content> {
-  showCloseButton?: boolean;
-}
-
-function AlertDialogContent(props: Readonly<DialogContentProps>) {
-  const { className, children, showCloseButton = true, ...rest } = props;
-
+function AlertDialogContent({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Content>>) {
   return (
-    <AlertDialogPortal data-slot="dialog-portal">
+    <AlertDialogPortal>
       <AlertDialogOverlay />
       <AlertDialogPrimitive.Content
         data-slot="alert-dialog-content"
         className={cn(
-          "bg-dialog-content-bg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-6 shadow-lg duration-200 sm:max-w-lg",
+          "bg-dialog-content-bg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-6 p-6 duration-200 sm:max-w-lg",
           className
         )}
         {...props}
-        {...rest}
       />
     </AlertDialogPortal>
   );
 }
 
-function AlertDialogHeader(props: Readonly<React.ComponentProps<"div">>) {
-  const { className, ...rest } = props;
-
+function AlertDialogHeader({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<"div">>) {
   return (
     <div
-      data-slot="dialog-header"
+      data-slot="alert-dialog-header"
       className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
-      {...rest}
+      {...props}
     />
   );
 }
 
-function AlertDialogFooter(props: Readonly<React.ComponentProps<"div">>) {
-  const { className, ...rest } = props;
-
+function AlertDialogFooter({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<"div">>) {
   return (
     <div
-      data-slot="dialog-footer"
+      data-slot="alert-dialog-footer"
       className={cn(
         "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
         className
       )}
-      {...rest}
+      {...props}
     />
   );
 }
 
-function AlertDialogTitle(
-  props: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Title>>
-) {
-  const { className, ...rest } = props;
+function AlertDialogTitle({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Title>>) {
   return (
     <AlertDialogPrimitive.Title
-      data-slot="dialog-title"
-      className={cn("text-lg leading-none font-semibold", className)}
-      {...rest}
+      data-slot="alert-dialog-title"
+      className={cn("text-lg font-semibold", className)}
+      {...props}
     />
   );
 }
 
-function AlertDialogDescription(
-  props: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Description>>
-) {
-  const { className, ...rest } = props;
+function AlertDialogDescription({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Description>>) {
   return (
     <AlertDialogPrimitive.Description
-      data-slot="dialog-description"
+      data-slot="alert-dialog-description"
       className={cn("text-muted-foreground text-sm", className)}
-      {...rest}
+      {...props}
     />
   );
+}
+
+function AlertDialogAction({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Action>>) {
+  return (
+    <AlertDialogPrimitive.Action
+      className={cn(buttonVariants(), className)}
+      {...props}
+    />
+  );
+}
+
+function AlertDialogCancel({
+  className,
+  ...props
+}: Readonly<React.ComponentProps<typeof AlertDialogPrimitive.Cancel>>) {
+  return (
+    <AlertDialogPrimitive.Cancel
+      className={cn(buttonVariants({}), className)}
+      {...props}
+    />
+  );
+}
+
+function AlertDialogVisuallyHidden({
+  ...props
+}: Readonly<React.ComponentProps<typeof VisuallyHidden>>) {
+  return <VisuallyHidden data-slot="alert-dialog-visually-hidden" {...props} />;
 }
 
 export {
   AlertDialog,
-  AlertDialogTrigger,
   AlertDialogPortal,
   AlertDialogOverlay,
+  AlertDialogTrigger,
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogFooter,
   AlertDialogTitle,
   AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogVisuallyHidden,
 };

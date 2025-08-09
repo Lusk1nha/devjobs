@@ -1,18 +1,14 @@
 "use client";
 
-import { TextInput, TextInputFieldProps } from "@devjobs/ui/text-input";
 import { useId } from "react";
 
 import { Control, Controller, FieldValues, Path } from "react-hook-form";
+import { TextInputMounted, TextInputMountedProps } from "../text-input-mounted";
 
 interface ControlledTextInputProps<T extends FieldValues>
-  extends TextInputFieldProps {
+  extends TextInputMountedProps {
   name: Path<T>;
   control: Control<T>;
-  icon?: React.ReactNode;
-  placeholder?: string;
-  description?: string;
-  required?: boolean;
 }
 
 export function ControlledTextInput<T extends FieldValues>(
@@ -36,21 +32,16 @@ export function ControlledTextInput<T extends FieldValues>(
       name={name}
       control={control}
       render={({ field }) => (
-        <TextInput.Wrapper>
-          <TextInput.Root className={className}>
-            {icon && <TextInput.Icon>{icon}</TextInput.Icon>}
-            <TextInput.Field
-              id={id}
-              name={field.name}
-              value={field.value || ""}
-              onChange={field.onChange}
-              placeholder={placeholder}
-              aria-describedby={description ? `${id}-desc` : undefined}
-              aria-required={required || undefined}
-              {...fieldProps}
-            />
-          </TextInput.Root>
-        </TextInput.Wrapper>
+        <TextInputMounted
+          id={id}
+          name={field.name}
+          value={field.value || ""}
+          onChange={field.onChange}
+          placeholder={placeholder}
+          className={className}
+          icon={icon}
+          {...fieldProps}
+        />
       )}
     />
   );

@@ -2,6 +2,7 @@ import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
 import { cn } from "@devjobs/utils/cn";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 function Dialog(
   props: Readonly<React.ComponentProps<typeof DialogPrimitive.Root>>
@@ -130,6 +131,12 @@ function DialogDescription(
   );
 }
 
+function DialogVisuallyHidden(
+  props: Readonly<React.ComponentProps<typeof VisuallyHidden>>
+) {
+  return <VisuallyHidden data-slot="dialog-visually-hidden" {...props} />;
+}
+
 export {
   Dialog,
   DialogTrigger,
@@ -141,4 +148,5 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
+  DialogVisuallyHidden,
 };

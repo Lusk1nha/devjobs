@@ -1,37 +1,54 @@
 "use client";
 
-import { Control } from "react-hook-form";
 import { SearchJobsSchema } from "../../validators/search-jobs-validator/search-jobs-validator";
-import { Dialog, DialogContent, DialogTrigger } from "@devjobs/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogVisuallyHidden,
+} from "@devjobs/ui/dialog";
 
-import { ControlledTextInput } from "../inputs/controlled-text-input/controlled-text-input";
-import { ControlledCheckboxInput } from "../inputs/controlled-checkbox-input/controlled-checkbox-input";
 import { Button } from "@devjobs/ui/button";
 import { PinIcon } from "@devjobs/icons/pin-icon";
 import { Separator } from "@devjobs/ui/separator";
 import { useCallback, useState } from "react";
 import { FilterIcon } from "@devjobs/icons/filter-icon";
+import { TextInputMounted } from "../inputs/text-input-mounted";
+import { CheckboxInput } from "@devjobs/ui/checkbox-input";
+
+type SearchJobSchemaWithoutTitle = Omit<SearchJobsSchema, "title">;
 
 interface MobileSearchFiltersDialogProps {
-  control: Control<SearchJobsSchema>;
+  onApply: (filters: SearchJobSchemaWithoutTitle) => void;
+  defaultValues?: SearchJobSchemaWithoutTitle;
 }
 
 export function MobileSearchFiltersDialog(
   props: Readonly<MobileSearchFiltersDialogProps>
 ) {
-  const { control } = props;
+  const { onApply, defaultValues } = props;
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleOpenChange = useCallback(
-    (open: boolean) => {
-      setIsOpen(open);
-    },
-    [setIsOpen, isOpen]
+  const [tempLocation, setTempLocation] = useState<string>(
+    defaultValues?.location ?? ""
+  );
+  const [tempFullTime, setTempFullTime] = useState<boolean>(
+    defaultValues?.fullTime ?? false
   );
 
+  const onSubmit = useCallback(() => {
+    const location = tempLocation.trim();
+
+    onApply({ location, fullTime: tempFullTime });
+    setIsOpen(false);
+  }, [onApply, tempLocation, tempFullTime]);
+
   return (
-    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
           variant="ghost"
@@ -41,32 +58,47 @@ export function MobileSearchFiltersDialog(
           <FilterIcon />
         </Button>
       </DialogTrigger>
+
       <DialogContent className="p-0">
-        <form className="flex flex-col py-6 gap-y-6">
+        <DialogVisuallyHidden>
+          <DialogHeader>
+            <DialogTitle>Filter Jobs</DialogTitle>
+            <DialogDescription>
+              Use the filters below to narrow your job search.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogVisuallyHidden>
+
+        <div className="flex flex-col py-6 gap-y-6">
           <div className="flex px-6">
-            <ControlledTextInput
+            <TextInputMounted
               name="location"
-              control={control}
               icon={<PinIcon />}
               className="h-6 py-0"
               placeholder="Filter by location…"
+              value={tempLocation}
+              onChange={(e) => setTempLocation(e.target.value)}
             />
           </div>
 
           <Separator />
 
           <div className="flex flex-col px-6">
-            <ControlledCheckboxInput name="fullTime" control={control}>
+            <CheckboxInput
+              name="fullTime"
+              checked={tempFullTime}
+              onChange={(e) => setTempFullTime(e.target.checked)}
+            >
               Full Time Only
-            </ControlledCheckboxInput>
+            </CheckboxInput>
           </div>
 
           <div className="w-full flex px-6">
-            <Button className="w-full" type="submit">
-              Apply Filters
+            <Button className="w-full" type="button" onClick={onSubmit}>
+              Search
             </Button>
           </div>
-        </form>
+        </div>
       </DialogContent>
     </Dialog>
   );

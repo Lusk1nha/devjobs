@@ -6,20 +6,22 @@ import { ControlledTextInput } from "../../inputs/controlled-text-input/controll
 
 import { JobFieldWrapper } from "./job-field-wrapper";
 import { PinIcon } from "@devjobs/icons/pin-icon";
-import { Control } from "react-hook-form";
-import { SearchJobsSchema } from "../../../validators/search-jobs-validator/search-jobs-validator";
+import { Control, FormState } from "react-hook-form";
+
 import { Button } from "@devjobs/ui/button";
 
 import { ControlledCheckboxInput } from "../../inputs/controlled-checkbox-input/controlled-checkbox-input";
+import { SearchJobsSchema } from "../../../validators/search-jobs-validator/search-jobs-validator";
 
 interface DesktopSearchJobsFiltersFormProps {
   control: Control<SearchJobsSchema>;
+  formState: FormState<SearchJobsSchema>;
 }
 
 export function DesktopSearchJobsFiltersForm(
   props: Readonly<DesktopSearchJobsFiltersFormProps>
 ) {
-  const { control } = props;
+  const { control, formState } = props;
 
   return (
     <div className="w-full h-full flex items-center justify-between gap-x-4 px-4 lg:px-7.5">
@@ -50,7 +52,9 @@ export function DesktopSearchJobsFiltersForm(
       </div>
 
       <div className="flex items-center gap-x-4">
-        <Button type="submit" className="lg:px-8">Search</Button>
+        <Button type="submit" className="lg:px-8" disabled={!formState.isDirty}>
+          Search
+        </Button>
       </div>
     </div>
   );

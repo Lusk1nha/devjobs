@@ -16,8 +16,19 @@
   --spacing-h-navbar: 136px;
   --spacing-h-navbar-md: 160px;
 
-  --spacing-w-content-md: 689px;
   --spacing-w-content-lg: 1110px;
+
+  --spacing-h-job-item: 228px;
+
+  --color-job-item-background: var(--theme-job-item-background);
+  --color-job-item-content: var(--theme-job-item-content);
+  --color-job-item-link: var(--theme-job-item-link);
+  --color-job-item-link-hover: var(--theme-job-item-link-hover);
+  --color-job-item-content-location: var(--theme-job-item-content-location);
+
+  --spacing-w-job-item: 327px;
+  --spacing-w-job-item-md: 339px;
+  --spacing-w-job-item-lg: 350px;
 }
 
 @layer base {
@@ -32,10 +43,20 @@
 
     --theme-logo-primary: var(--color-white);
     --theme-switch-theme-icon: var(--color-white);
+
+    --theme-job-item-background: var(--color-white);
+    --theme-job-item-content: var(--color-gray-900);
+    --theme-job-item-link: var(--color-dark-blue-900);
+    --theme-job-item-link-hover: var(--color-gray-900);
+    --theme-job-item-content-location: var(--color-violet-900);
   }
 
   [data-theme="dark"] {
     --theme-dashboard-background: var(--color-midnight-900);
     --theme-search-filters-background: var(--color-dark-blue-900);
+
+    --theme-job-item-background: var(--color-dark-blue-900);
+    --theme-job-item-link: var(--color-white);
+    --theme-job-item-link-hover: var(--color-gray-900);
   }
 }

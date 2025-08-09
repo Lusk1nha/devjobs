@@ -65,14 +65,16 @@ Root.displayName = "Input.Root";
 interface InputIconProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
   className?: string;
+  disableMobile?: boolean;
 }
 const Icon = React.forwardRef<HTMLSpanElement, InputIconProps>(
-  ({ children, className, ...props }, ref) => (
+  ({ children, className, disableMobile, ...props }, ref) => (
     <span
       data-slot="input-icon"
       ref={ref}
       className={cn(
         "flex h-5 w-5 items-center justify-center text-text-input-icon",
+        disableMobile && "hidden md:flex",
         className
       )}
       {...props}
