@@ -16,6 +16,7 @@
   --color-text-input-text: var(--theme-text-input-text);
   --color-text-input-placeholder: var(--theme-text-input-placeholder);
   --color-text-input-icon: var(--theme-text-input-icon);
+  --color-text-input-caret: var(--theme-text-input-caret);
 
   /* ==== Button ==== */
   --spacing-button-default-p: 0.875rem;
@@ -28,6 +29,15 @@
   --color-button-ghost-text: var(--theme-button-ghost-text);
   --color-button-ghost-hover-bg: var(--theme-button-ghost-hover-bg);
   --color-button-ghost-hover-text: var(--theme-button-ghost-hover-text);
+
+  /* ==== Checkbox Input ==== */
+  --spacing-checkbox-w: 1.5rem;
+  --spacing-checkbox-h: 1.5rem;
+  --color-checkbox-active: var(--theme-checkbox-active);
+  --color-checkbox-inactive: var(--theme-checkbox-inactive);
+  --color-checkbox-inactive-hover: var(--theme-checkbox-inactive-hover);
+  --color-checkbox-check-text: var(--theme-checkbox-check-text);
+  --color-checkbox-label-text: var(--theme-checkbox-label-text);
 }
 
 @layer base {
@@ -43,6 +53,7 @@
     --theme-text-input-text: var(--color-dark-blue-900);
     --theme-text-input-placeholder: var(--color-dark-blue-900);
     --theme-text-input-icon: var(--color-violet-900);
+    --theme-text-input-caret: var(--color-violet-900);
 
     /* ==== Button ==== */
     --theme-button-default-bg: var(--color-violet-900);
@@ -53,6 +64,13 @@
     --theme-button-ghost-text: var(--color-gray-900);
     --theme-button-ghost-hover-bg: var(--color-violet-900);
     --theme-button-ghost-hover-text: var(--color-gray-900);
+
+    /* ==== Checkbox Input ==== */
+    --theme-checkbox-active: var(--color-violet-900);
+    --theme-checkbox-inactive: var(--color-dark-blue-900);
+    --theme-checkbox-inactive-hover: var(--color-violet-900);
+    --theme-checkbox-check-text: var(--color-white);
+    --theme-checkbox-label-text: var(--color-dark-blue-900);
   }
 
   [data-theme="dark"] {
@@ -66,5 +84,9 @@
     --theme-button-ghost-text: var(--color-white);
     --theme-button-ghost-hover-bg: var(--color-gray-900);
     --theme-button-ghost-hover-text: var(--color-white);
+
+    /* ==== Checkbox Input ==== */
+    --theme-checkbox-inactive: var(--color-white);
+    --theme-checkbox-label-text: var(--color-white);
   }
 }

@@ -32,7 +32,7 @@ export function MobileSearchJobsFiltersForm(
         <OpenFilterDialogAction />
 
         <Button type="submit">
-          <SearchIcon />
+          <SearchIcon className="w-5 h-5" />
         </Button>
       </div>
     </div>
