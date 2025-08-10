@@ -2,7 +2,7 @@ import { cn } from "@devjobs/utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 import { forwardRef } from "react";
 
-const buttonVariants = cva("inline-flex items-center justify-center rounded-5 hover:cursor-pointer text-heading-4", {
+const buttonVariants = cva("inline-flex items-center justify-center rounded-5 hover:cursor-pointer text-heading-4 disabled:opacity-50 disabled:cursor-not-allowed", {
   variants: {
     variant: {
       default: "bg-button-default-bg hover:bg-button-default-hover-bg text-button-default-text hover:text-button-default-hover-text",

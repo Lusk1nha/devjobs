@@ -12,7 +12,7 @@ export default function DashboardLayout(
   return (
     <div
       id="dashboard-layout"
-      className="bg-dashboard-background w-full h-screen flex flex-col"
+      className="bg-dashboard-background w-full min-h-screen flex flex-col pb-6"
     >
       <Navbar />
       {children}
